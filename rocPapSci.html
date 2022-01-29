@@ -1,5 +1,8 @@
 <script>
 
+    let pScore = 0;
+    let cScore = 0;
+
     function computerPlay(){
         const choices = ["rock", "paper", "scissors"];
 
@@ -8,41 +11,45 @@
     }
 
     function play(playerSelection, computerSelection){
-        playerSelection.toLowerCase();
-
         if (playerSelection == "rock" && computerSelection == "paper") {
-            return "You lose! Paper beats Rock.";
+            console.log("You lose! Paper beats Rock.");
+            return cScore++;
         } else if (playerSelection == "paper" && computerSelection == "rock"){
-            return "You win! Paper beats Rock.";
+            console.log("You win! Paper beats Rock.");
+            return pScore++;
         } else if (playerSelection == "paper" && computerSelection == "scissors"){
-            return "You lose! Scissors beats Paper.";
+            console.log("You lose! Scissors beats Paper.");
+            return cScore++;
         } else if (playerSelection == "scissors" && computerSelection == "paper"){
-            return "You win! Scissors beats Paper.";
+            console.log("You win! Scissors beats Paper.");
+            return pScore++;
         } else if (playerSelection == "scissors" && computerSelection == "rock"){
-            return "You lose! Rock beats Scissors.";
+            console.log("You lose! Rock beats Scissors.");
+            return cScore++;
         } else if (playerSelection == "rock" && computerSelection == "scissors"){
-            return "You win! Rock beats Scissors."
+            console.log("You win! Rock beats Scissors.");
+            return pScore++;
         } else if (playerSelection == computerSelection) {
-            return "Tie, go again!";
+            console.log("Tie, go again!");
         } else {
-            return "Invalid input, try again.";
+            console.log("Invalid input, try again.");
         }
     }
 
     function game(){
-        let pScore = 0, cScore = 0;
-
         for (let i = 0; i < 5; i++){
             let playerSelection = prompt("Select: ").toLowerCase();
             console.log(play(playerSelection, computerPlay()));
-
-            console.log(play);
         }
+        if (pScore > cScore){
+                console.log("You win the series " + pScore + " - " + cScore + "!");
+            } else if (cScore > pScore){
+                console.log("You lose the series " + cScore + " - " + pScore + "!");
+            } else {
+                console.log("It's a tie! final score is " + pScore + " - " + cScore);
+            }
     }
 
 
     console.log(game());
-    // console.log(play(playerSelection, computerSelection));
-
-
 </script>
