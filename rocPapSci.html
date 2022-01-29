@@ -1,0 +1,35 @@
+<script>
+
+    function computerPlay(){
+        const choices = ["rock", "paper", "scissors"];
+
+        const random = Math.floor(Math.random() * choices.length);
+        return random;
+    }
+
+    function play(playerSelection, computerSelection){
+        playerSelection.toLowerCase();
+
+        if (playerSelection === "rock" && computerSelection === "paper") {
+            return "You lose! Paper beats Rock.";
+        } else if (playerSelection === "paper" && computerSelection === "rock"){
+            return "You win! Paper beats Rock.";
+        } else if (playerSelection === "paper" && computerSelection === "scissors"){
+            return "You lose! Scissors beats Paper.";
+        } else if (playerSelection === "scissors" && computerSelection === "paper"){
+            return "You win! Scissors beats Paper.";
+        } else if (playerSelection === "scissors" && computerSelection === "rock"){
+            return "You lose! Rock beats Scissors.";
+        } else if (playerSelection === "rock" && computerSelection === "scissors"){
+            return "You win! Rock beats Scissors."
+        } else {
+            return "Invalid input, try again.";
+        }
+    }
+
+    const playerSelection = "rock";
+    const computerSelection = computerPlay();
+    console.log(play(playerSelection, computerSelection));
+
+
+</script>
