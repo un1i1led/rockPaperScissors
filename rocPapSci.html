@@ -4,32 +4,45 @@
         const choices = ["rock", "paper", "scissors"];
 
         const random = Math.floor(Math.random() * choices.length);
-        return random;
+        return choices[random];
     }
 
     function play(playerSelection, computerSelection){
         playerSelection.toLowerCase();
 
-        if (playerSelection === "rock" && computerSelection === "paper") {
+        if (playerSelection == "rock" && computerSelection == "paper") {
             return "You lose! Paper beats Rock.";
-        } else if (playerSelection === "paper" && computerSelection === "rock"){
+        } else if (playerSelection == "paper" && computerSelection == "rock"){
             return "You win! Paper beats Rock.";
-        } else if (playerSelection === "paper" && computerSelection === "scissors"){
+        } else if (playerSelection == "paper" && computerSelection == "scissors"){
             return "You lose! Scissors beats Paper.";
-        } else if (playerSelection === "scissors" && computerSelection === "paper"){
+        } else if (playerSelection == "scissors" && computerSelection == "paper"){
             return "You win! Scissors beats Paper.";
-        } else if (playerSelection === "scissors" && computerSelection === "rock"){
+        } else if (playerSelection == "scissors" && computerSelection == "rock"){
             return "You lose! Rock beats Scissors.";
-        } else if (playerSelection === "rock" && computerSelection === "scissors"){
+        } else if (playerSelection == "rock" && computerSelection == "scissors"){
             return "You win! Rock beats Scissors."
+        } else if (playerSelection == computerSelection) {
+            return "Tie, go again!";
         } else {
             return "Invalid input, try again.";
         }
     }
 
-    const playerSelection = "rock";
-    const computerSelection = computerPlay();
-    console.log(play(playerSelection, computerSelection));
+    function game(){
+        let pScore = 0, cScore = 0;
+
+        for (let i = 0; i < 5; i++){
+            let playerSelection = prompt("Select: ").toLowerCase();
+            console.log(play(playerSelection, computerPlay()));
+
+            console.log(play);
+        }
+    }
+
+
+    console.log(game());
+    // console.log(play(playerSelection, computerSelection));
 
 
 </script>
