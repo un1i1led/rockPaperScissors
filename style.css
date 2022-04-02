@@ -1,0 +1,71 @@
+body {
+    margin: 0px;
+    padding: 0px;
+}
+
+#score {
+    white-space: pre;
+}
+
+.header {
+    padding: 20px;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+#headerText {
+    margin: 0px;
+    font-family: 'Permanent Marker', cursive;
+}
+
+#firstToFive {
+    display: flex;
+    justify-content: center;
+    font-family: 'Play', sans-serif;
+}
+
+.picks {
+    height: 200px;
+    display: flex;
+    justify-content: center;
+}
+
+.player, .computer {
+    height: 180px;
+    width: 200px;
+}
+
+.picks p {
+    display: flex;
+    justify-content: center;
+}
+
+.options{
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+}
+
+.win {
+    color: green;
+}
+
+.loss {
+    color: red;
+}
+
+.choice {
+    height: 120px;
+    width: 150px;
+    margin-left: 30px;
+    border-radius: 8px;
+}
+
+.name {
+    font-family: 'Play', sans-serif;
+}
+
+.btn {
+    height: 30px;
+}
